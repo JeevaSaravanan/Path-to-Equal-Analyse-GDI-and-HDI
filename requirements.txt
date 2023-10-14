@@ -1,2 +1,4 @@
 plotly
 seaborn
+altair
+PIL
