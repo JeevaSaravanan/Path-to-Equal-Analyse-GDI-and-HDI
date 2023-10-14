@@ -1,4 +1,7 @@
-plotly
-seaborn
-altair
-PIL
+altair==5.1.2
+matplotlib==3.7.3
+pandas==1.5.3
+Pillow==9.4.0
+Pillow==10.0.1
+plotly==5.9.0
+streamlit==1.26.0
