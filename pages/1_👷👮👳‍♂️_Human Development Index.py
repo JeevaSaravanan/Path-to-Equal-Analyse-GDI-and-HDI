@@ -19,6 +19,13 @@ st.sidebar.header("Human Development Index")
 
 st.subheader('Human Development Index')
 st.write('The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and having a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.')
+st.markdown("""
+**How to Read the values?** 
+- Values ranging from 1 to 0.800 are considered `Very high` human development,
+- Values ranging from 0.799 to 0.700 are considered`High` human development,
+- Values ranging from 0.550 to 0.699 are considered `Medium` human development,
+- Values ranging below 0.550 are considered `Low` human development, 
+""")
 hdi_road_map_img = Image.open('Images/hdiRoadMap.png')
 st.image(hdi_road_map_img,"HDI Dimensions & Indicator")
 

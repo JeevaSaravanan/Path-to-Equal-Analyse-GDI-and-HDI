@@ -38,6 +38,10 @@ st.sidebar.header("Gender Development Index")
 
 st.subheader('Gender Development Index')
 st.write('The Gender Development Index (GDI) is a composite measure designed to assess gender disparities and inequalities in a society by considering factors related to human development. It is an extension of the Human Development Index (HDI) and focuses on three key dimensions: health, education, and income. In the GDI, these dimensions are assessed separately for males and females, allowing for a comparison of gender-based development gaps. Health indicators typically include life expectancy at birth for both genders. Education indicators encompass literacy rates and enrollment in primary, secondary, and tertiary education for both males and females. The income component typically examines income levels and workforce participation for both genders.')
+st.markdown("""
+**How to Read the values?** 
+- Values `below 1` indicate `higher human development` for `men than women`, while `values above 1` indicate `the opposite`.
+""")
 gdi_img = Image.open('Images/gdi.png')
 st.image(gdi_img,"Calculating the GDI—graphical presentation")
 
