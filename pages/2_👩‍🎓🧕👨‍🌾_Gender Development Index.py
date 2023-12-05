@@ -29,7 +29,7 @@ hdr_data = pd.read_csv("HDR_Data.csv")
 st.markdown("<h1 style='text-align: center;'>The Path to Equal</h1>",unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col3:
-    st.caption("~A Project done by Jeeva Saravana Bhavanandam")
+    st.caption("~ Made by Jeeva Saravana Bhavanandam")
 st.subheader("", divider='rainbow')
 
 

@@ -12,7 +12,8 @@ st.set_page_config(page_title="Human Development Index", page_icon="👷👮👳
 st.markdown("<h1 style='text-align: center;'>The Path to Equal</h1>",unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col3:
-    st.caption("~A Project done by Jeeva Saravana Bhavanandam")
+    st.caption("~ Made by Jeeva Saravana Bhavanandam")
+    
 st.subheader("", divider='rainbow')
 
 st.sidebar.header("Human Development Index")
