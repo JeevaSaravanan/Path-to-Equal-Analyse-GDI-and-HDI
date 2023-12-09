@@ -184,11 +184,9 @@ with tab2:
 
     X_train, X_test, y_train, y_test = features[features["year"]<2017], features[features["year"]>=2010] , df[df['year']<2017]['shdi'],df[df['year']>=2010]['shdi']
 
-    random_forest = st.toggle('Show Predictions with Random Forest')
-    linear_regression = st.toggle('Show Predictions with Linear Regression')
-    elastic_nt = st.toggle('Show Predictions with Elastic Net')
+    random_forest, linear_regression, elastic_nt = st.tabs(["Show Predictions with Random Forest","Show Predictions with Linear Regression","Show Predictions with Elastic Net"])
 
-    if(random_forest):
+    with random_forest:
 
         st.markdown("### Prediction with RandomForest [to know more](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)")
 
@@ -252,7 +250,8 @@ For a Random Forest with $n$ trees, the final prediction is the combination of p
 
         rf_rmse = np.sqrt(mean_squared_error(y_test, rf_predictions))
         print(f'Random Forest RMSE: {rf_rmse}')
-
+        st.markdown("**Random Forest RMSE:**")
+        st.write(rf_rmse)
         # Create Line Plot 1
         trace1 = go.Scatter(x=df['year'], y=df['shdi'], mode='lines', name='HDI - Actual', line=dict(color='orange'))
 
@@ -267,7 +266,7 @@ For a Random Forest with $n$ trees, the final prediction is the combination of p
         st.plotly_chart(fig, use_container_width=True)
     
 
-    if(linear_regression):
+    with linear_regression:
 
         st.markdown("### Prediction with Linear regression [to know more](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)")
 
@@ -332,6 +331,9 @@ The coefficients $β$ are typically estimated using methods such as ordinary lea
         lin_rmse = np.sqrt(mean_squared_error(y_test, lin_predictions))
         print(f'lin RMSE: {lin_rmse}')
 
+        st.markdown("**Linear Regression RMSE**")
+        st.write(lin_rmse)
+
         # Create Line Plot 1
         trace1 = go.Scatter(x=df['year'], y=df['shdi'], mode='lines', name='HDI - Actual', line=dict(color='hotpink'))
 
@@ -346,7 +348,7 @@ The coefficients $β$ are typically estimated using methods such as ordinary lea
         st.plotly_chart(fig, use_container_width=True)
     
 
-    if elastic_nt:
+    with elastic_nt:
 
         st.markdown("### Prediction with Elastic net [to know more](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html)")
 
@@ -403,6 +405,9 @@ The choice of $α$ and $\lambda$ is crucial and depends on the specific requirem
 
         en_rmse = np.sqrt(mean_squared_error(y_test, en_predictions))
         print(f'en RMSE: {en_rmse}')
+
+        st.markdown("**Elastic Net RMSE**")
+        st.write(en_rmse)
 
         # Create Line Plot 1
         trace1 = go.Scatter(x=df['year'], y=df['shdi'], mode='lines', name='HDI - Actual', line=dict(color='mediumturquoise'))

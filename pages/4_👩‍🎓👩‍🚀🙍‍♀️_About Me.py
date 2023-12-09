@@ -10,8 +10,9 @@ st.subheader("", divider='rainbow')
 
 st.sidebar.header("About Me")
 
-
-
+coli, colj, colk,coll,col6 = st.columns(5)
+with colk:
+  st.image("Images/AboutME.gif")
 st.write(" ")
 st.write(" ")
 st.write(" ")
